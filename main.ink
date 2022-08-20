@@ -1,36 +1,50 @@
 INCLUDE local_template.ink
-
+INCLUDE mayor.ink
 INCLUDE mark_of_cain.ink
-
-
+INCLUDE dentist.ink
+INCLUDE fortune_teller.ink
+INCLUDE city_hall.ink
+INCLUDE psychic_emporium.ink
+INCLUDE accuse.ink
 LIST knowledge = (starting_clue),choice1,choice2
 
 VAR actions_taken = 0
 VAR max_actions_per_ch = 3
 
 VAR chapter = 1
-LIST loc = (local_template) //(city_hall),market_place,fortune_teller_emporium,medical_street
+LIST loc = local_template,(mayor),(denstist),(fortune_teller),city_hall,psychic_emporium //(city_hall),market_place,fortune_teller_emporium,medical_street
 
 ->root
 ===root===
 Day{chapter}
 ->discription->
 {loc ? local_template:
-    +[dddd] -> menu_template
+    +[generic menu template] -> menu_template
 }
-// {loc ? city_hall:
-//     +[City Hall] ->city_hall
-// }
-// {loc ? market_place: 
-//     +[Market Place] ->market_place
-// }
-// {loc ? fortune_teller_emporium: 
-//     +[Fortune Teller Emporium] ->fortune_teller_emporium
-// }
+{loc ? mayor:
+    +[Mayor] -> mayor_knot
+}
+{loc ? denstist:
+    +[denstist] -> denstist_knot
+}
+{loc ? denstist:
+    +[fortune_teller] -> fortune_teller_knot
+}
+{loc ? denstist:
+    +[City Hall] -> fortune_teller_knot
+}
+{loc ? city_hall:
+    +[City Hall] ->city_hall_knot
+}
+{loc ? psychic_emporium: 
+    +[psychic_emporium] ->psychic_emporium_knot
+}
 // {loc ? medical_street: 
 //     +[Medical Street] ->medical_street
 // }
 +[Rest for the Night] ->up_state->
+
++[accuse a suspect and finish the case] -> accuse
 
 - ->root
 
@@ -57,7 +71,3 @@ Day{chapter}
     ->ret
 }
 ~actions_taken++
-
-===accuse===
-accuse!
-->END
