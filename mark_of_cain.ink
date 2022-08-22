@@ -6,4 +6,4 @@
 *[choice 2]
     ~knowledge += choice2
     ->ret
-+[leave] ->ret
+- ->root
