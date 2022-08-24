@@ -1,33 +1,32 @@
-INCLUDE mayor.ink
-INCLUDE dentist.ink
-INCLUDE city_hall.ink
-INCLUDE psychic_emporium.ink
-INCLUDE accuse.ink
-INCLUDE prolog.ink
-INCLUDE mayor_ch1_storylet.ink
-INCLUDE storylet_city_hall.ink
-INCLUDE cycle_mayor.ink
-INCLUDE cycle_dentist.ink
-INCLUDE MofC_dentist.ink
-INCLUDE dental_clinic.ink
-INCLUDE cycle_dental_clinic.ink
-INCLUDE MofC_dental_clinic.ink
-INCLUDE prosthetist.ink
-INCLUDE cycle_prosthetist.ink
-INCLUDE MofC_prosthetist.ink
-INCLUDE prosthetics_clinic.ink
-INCLUDE cycle_prosthetics_clinic.ink
-INCLUDE MofC_prosthetics_clinic.ink
-INCLUDE fortune_teller.ink
-INCLUDE cycle_fortune_teller.ink
-INCLUDE fortune_teller’s_emporium.ink
-INCLUDE cycle_fortune_teller_emporium.ink
-
-
-
-
-
-
+INCLUDE 1_mayor.ink
+INCLUDE 1_dentist.ink
+INCLUDE 1_city_hall.ink
+INCLUDE 1_accuse.ink
+INCLUDE 1_prolog.ink
+INCLUDE 1_fortune_teller’s_emporium.ink
+INCLUDE 1_dental_clinic.ink
+INCLUDE 1_prosthetist.ink
+INCLUDE 1_prosthetics_clinic.ink
+INCLUDE 1_fortune_teller.ink
+INCLUDE 3_MofC_mayor_ch1.ink
+INCLUDE 3_MofC_city_hall.ink
+INCLUDE 2_cycle_mayor.ink
+INCLUDE 2_cycle_dentist.ink
+INCLUDE 3_MofC_dentist.ink
+INCLUDE 2_cycle_dental_clinic.ink
+INCLUDE 3_MofC_dental_clinic.ink
+INCLUDE 2_cycle_prosthetist.ink
+INCLUDE 3_MofC_prosthetist.ink
+INCLUDE 2_cycle_prosthetics_clinic.ink
+INCLUDE 3_MofC_prosthetics_clinic.ink
+INCLUDE 2_cycle_fortune_teller.ink
+INCLUDE 2_cycle_fortune_teller_emporium.ink
+INCLUDE 1_day2_prolog.ink
+INCLUDE 3_MofC_mayor_ch2.ink
+INCLUDE 3_MofC_dentist_ch2.ink
+INCLUDE 3_MofC_prosthetist_ch2.ink
+INCLUDE 3_MofC_fortune_teller_ch2.ink
+INCLUDE 1_accuse_prolog.ink
 
 
 
@@ -53,43 +52,54 @@ VAR actions_taken = 0
 VAR max_actions_per_ch = 3
 
 VAR chapter = 1
-LIST loc = local_template,(mayor),(denstist),(fortune_teller),(city_hall),(dental_clinic),psychic_emporium //(city_hall),market_place,fortune_teller_emporium,medical_street
+LIST loc = (mayor),(denstist),(fortune_teller),(city_hall),(Dental_clinic),(fortune_teller_emporium),(Prosthetist),(Posthetics_clinic)
 
 ->prolog_knot
 ===root===
 Day{chapter}
 ->discription->
 {loc ? mayor:
-    *[Mayor] -> mayor_knot
-}
-{loc ? denstist:
-    *[denstist] -> denstist_knot
-}
-{loc ? denstist:
-    *[fortune_teller] -> fortune_teller_knot
-}
-{loc ? denstist:
-    *[City Hall] -> fortune_teller_knot
+    +[Mayor] -> mayor_knot
 }
 {loc ? city_hall:
     *[City Hall] ->city_hall_knot
 }
-{loc ? psychic_emporium: 
-    *[psychic_emporium] ->psychic_emporium_knot
+{loc ? denstist:
+    +[Denstist] -> denstist_knot
 }
-// {loc ? medical_street: 
-//     +[Medical Street] ->medical_street
-// }
+{loc ? Dental_clinic:
+    +[Dental clinic] -> dental_clinic
+}
+{loc ? fortune_teller:
+    +[Fortune teller] -> fortune_teller_knot
+}
+{loc ? fortune_teller_emporium: 
+    +[Fortune teller emporium] ->fortune_teller_emporium_knot
+}
+{loc ? Prosthetist:
+    +[Prosthetist] -> prosthetist
+}
+{loc ? Posthetics_clinic: 
+    +[Posthetics clinic] ->prosthetics_clinic
+}
+
 +[Rest for the Night] ->up_state->
 
-+[accuse a suspect and finish the case] -> accuse
++[accuse a suspect and finish the case] -> accuse_prolog
 
 - ->root
 
 =up_state
 ~chapter++
+{chapter == 2:
+    ~loc -= city_hall
+    ~loc -= dental_clinic
+    ~loc -= fortune_teller_emporium
+    ~loc -= Posthetics_clinic
+    ->day2_prolog->
+}
 {chapter == 3:
-    ->accuse
+    ->accuse_prolog
 }
 ->->
 
@@ -101,7 +111,8 @@ Day{chapter}
 
         I wonder just how much of this I’ll be able to uncover today. 
 
-    -2: You decided to keep pushing on with investigation so you scan your journal. Since there wasn't enough evidence to make an accusation yet, you decide you must revisit everyone to find more evidence. 
+    -2: 	The case has changed since I started working on it… I should prioritize asking questions and I should be very careful with exactly what I ask each person I speak to today…
+ 
     -3: You’ve decided you need more evidence. You receive news that there has been another abduction. You scan through the daily newspaper and see a picture of the young teenager you met just yesterday.
 }
 ->->
