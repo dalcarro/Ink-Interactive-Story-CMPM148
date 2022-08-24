@@ -52,4 +52,7 @@ That’s all I have to work with, but it’s more than plenty for a detective. I
 The mayor beams again, “I’m glad your travels were safe and sound. I expect you’ll have an answer to this… troubling incident soon? Shall our town’s residents have an answer within a week?”
 
 I tuck the envelope back into my coat pocket, “Mr. Mayor… with all due respect, I would have hoped you knew the caliber of the detective that you hired. Two days is enough.”
-->root
+    @@@during the game questions can reveal evidence. Who you can accuse@@@
+    @@@is determined by how much evidence you have against someone.@@@
+
+- ->root

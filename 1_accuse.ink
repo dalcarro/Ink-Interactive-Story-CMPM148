@@ -1,8 +1,20 @@
  ===accuse===
+{dirt_mayor >= 3:
+*[“Mr. Mayor!”]The Mayor narrows his eyes, "Detective... watch your words."
 
-*[“Mr. Mayor!”]
+    "Of course," I say, "My apologies, I should start by saying I actually accuse Miss Fortuna."
+
+    "Our dear Fortune Teller, how dare-" The Mayor started.
+
+    “SHUT UP!”
+
+    All eyes turn to look at Miss Fortuna, whose face was contorted in rage.
+
+    “Allow me to explain-” I start
+
     ->coming_togther
-
+}
+{dirt_dentist >= 3:
 *[“The Dentist!”]
     “After all I’ve done for this town, you accuse me…” He says grimly.
 
@@ -24,7 +36,8 @@
     I suppose he really did run off like the Fortune Teller had predicted.
 
     ->End_Knot
-    
+}
+{dirt_prosthetist >= 3:
 *[“The Prosthetist!”]“ME!?” the Prosthetist took his wooden arm off and swung it around, “How dare you throw these baseless accusations at me! I done nothin’ but good ‘round here, creatin’ parts for those who needed it.”
 
     “And those parts are exactly what come into question, my doctor,” I say, “Your fascination with limbs already puts you in a bad position. The victim was found with severed limbs. Could it be that you used them to practice making your prosthetics?”
@@ -52,9 +65,19 @@
     I want to call this a victory… but everywhere they looked, Timmie was never found. 
     I suppose he really did run off like the Fortune Teller had predicted.
     ->End_Knot
+}
+{dirt_fortune_teller >= 3:
 *[“Miss Fortuna!”]
-    ->coming_togther
+    The Mayor jumps with a start, “Good heavens no, not our dear Fortu-”
 
+    “SHUT UP!”
+
+    All eyes turn to look at Miss Fortuna, whose face was contorted in rage.
+
+    “Allow me to explain-” I start.
+
+    ->coming_togther
+}
 *[“Undetermined!”]“Undetermined!?” the Mayor gasps, but the teller jabs him lightly with her elbow.
  
     “Oh dear!” she cries, “Does that mean our criminal has escaped your deductions?”
@@ -72,18 +95,6 @@
 
 
 =coming_togther
-The Mayor narrows his eyes, "Detective... watch your words."
-
-    "Of course," I say, "My apologies, I should start by saying I actually accuse Miss Fortuna."
-
-    "Our dear Fortune Teller, how dare-" The Mayor started.
-
-    “SHUT UP!”
-
-    All eyes turn to look at Miss Fortuna, whose face was contorted in rage.
-
-    “Allow me to explain-” I start.
-
     “NO!” she roars, “I will not sit here and tolerate such slander against my name. I have done nothing but liven up the day to day for those poor children, entertaining them with enchanted readings and offering them trinkets for protection! What could I have done with such grisly crimes! Murder? Abduction? You’re mad! Mr. Mayor, tell him to stop this at once!”
 
     “She is right, detective. You will name the true culprit after this won't you?” the Mayor asks.

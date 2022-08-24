@@ -1,4 +1,6 @@
 ===cycle_dentist===
+When I walked into the clinic, the bell atop the door rings. The receptionist’s desk seems to be empty. Now where did everybody go?
+
 ~iterator = 0
 ->return_stitch
 =return_stitch

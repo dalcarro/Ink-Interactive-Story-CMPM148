@@ -55,6 +55,7 @@ VAR chapter = 1
 LIST loc = (mayor),(denstist),(fortune_teller),(city_hall),(Dental_clinic),(fortune_teller_emporium),(Prosthetist),(Posthetics_clinic)
 
 ->prolog_knot
+
 ===root===
 Day{chapter}
 ->discription->
