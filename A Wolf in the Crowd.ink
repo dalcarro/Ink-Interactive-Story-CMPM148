@@ -1,17 +1,48 @@
-INCLUDE local_template.ink
 INCLUDE mayor.ink
-INCLUDE mark_of_cain.ink
 INCLUDE dentist.ink
-INCLUDE fortune_teller.ink
 INCLUDE city_hall.ink
 INCLUDE psychic_emporium.ink
 INCLUDE accuse.ink
 INCLUDE prolog.ink
 INCLUDE mayor_ch1_storylet.ink
+INCLUDE storylet_city_hall.ink
+INCLUDE cycle_mayor.ink
+INCLUDE cycle_dentist.ink
+INCLUDE MofC_dentist.ink
+INCLUDE dental_clinic.ink
+INCLUDE cycle_dental_clinic.ink
+INCLUDE MofC_dental_clinic.ink
+INCLUDE prosthetist.ink
+INCLUDE cycle_prosthetist.ink
+INCLUDE MofC_prosthetist.ink
+INCLUDE prosthetics_clinic.ink
+INCLUDE cycle_prosthetics_clinic.ink
+INCLUDE MofC_prosthetics_clinic.ink
+INCLUDE fortune_teller.ink
+INCLUDE cycle_fortune_teller.ink
+INCLUDE fortune_teller’s_emporium.ink
+INCLUDE cycle_fortune_teller_emporium.ink
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //evidence state tracking
 VAR dirt_dentist = 0
 VAR dirt_prosthetist = 0
+VAR dirt_fortune_teller = 0
+VAR dirt_mayor = 0
+
+VAR iterator = 0
 
 
 
@@ -57,7 +88,7 @@ Day{chapter}
 
 =up_state
 ~chapter++
-{chapter == 4:
+{chapter == 3:
     ->accuse
 }
 ->->
@@ -74,10 +105,3 @@ Day{chapter}
     -3: You’ve decided you need more evidence. You receive news that there has been another abduction. You scan through the daily newspaper and see a picture of the young teenager you met just yesterday.
 }
 ->->
-
-===use_action(->ret)===
-{actions_taken > max_actions_per_ch:
-    you are too exhausted to investigate more today
-    ->ret
-}
-~actions_taken++

@@ -12,7 +12,7 @@
 
 =ch1
 
-+[char_template] ->mark_of_cain_knot(->psychic_emporium_knot)
+//+[char_template] ->mark_of_cain_knot
 
 //+[storylet] ->storylet
 

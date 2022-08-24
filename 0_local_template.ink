@@ -1,4 +1,4 @@
-===denstist_knot===
+ ===menu_template===
 {chapter == 1:
      ->ch1->
     -else: ->ch2->
@@ -7,10 +7,7 @@
 
 =ch1
 //description here
- ->cycle_dentist->
- 
- ->MofC_dentist->
- 
+
 ->->
 
 =ch2
@@ -18,4 +15,3 @@
 
 
 ->->
-

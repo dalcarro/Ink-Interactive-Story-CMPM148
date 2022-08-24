@@ -1,4 +1,4 @@
-===denstist_knot===
+ ===fortune_teller_emporium===
 {chapter == 1:
      ->ch1->
     -else: ->ch2->
@@ -7,10 +7,7 @@
 
 =ch1
 //description here
- ->cycle_dentist->
- 
- ->MofC_dentist->
- 
+->cycle_fortune_teller_emporium->
 ->->
 
 =ch2
@@ -18,4 +15,3 @@
 
 
 ->->
-
