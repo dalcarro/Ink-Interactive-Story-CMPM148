@@ -23,7 +23,7 @@
     I want to call this a victory… but everywhere they looked, Timmie was never found. 
     I suppose he really did run off like the Fortune Teller had predicted.
 
-    ->END
+    ->End_Knot
     
 *[“The Prosthetist!”]“ME!?” the Prosthetist took his wooden arm off and swung it around, “How dare you throw these baseless accusations at me! I done nothin’ but good ‘round here, creatin’ parts for those who needed it.”
 
@@ -51,7 +51,7 @@
 
     I want to call this a victory… but everywhere they looked, Timmie was never found. 
     I suppose he really did run off like the Fortune Teller had predicted.
-    ->END
+    ->End_Knot
 *[“Miss Fortuna!”]
     ->coming_togther
 
@@ -68,7 +68,7 @@
     And with that, I packed my belongings and took the first train out of town. I’ll never be able to figure out what really happened to Cordelia, nor will I be able to ever find out what became of Timothy. 
 
     I can’t help but feel that justice was within my grasp, but it’s too late to muse over this anymore…
-        ->END
+        ->End_Knot
 
 
 =coming_togther
@@ -157,4 +157,8 @@ The Mayor narrows his eyes, "Detective... watch your words."
         The Mayor and Fortune Teller have been arrested. I do not know what will become of them, but a punishment fitting of their crimes should be most suitable. 
 
         It was a long and twisted journey, but the resolution leaves me happy I never stopped looking for the truth. 
-        ->END
+        ->End_Knot
+        
+===End_Knot===
+The End.
+->END

@@ -68,19 +68,19 @@ Day{chapter}
     +[Denstist] -> denstist_knot
 }
 {loc ? Dental_clinic:
-    +[Dental clinic] -> dental_clinic
+    *[Dental clinic] -> dental_clinic
 }
 {loc ? fortune_teller:
     +[Fortune teller] -> fortune_teller_knot
 }
 {loc ? fortune_teller_emporium: 
-    +[Fortune teller emporium] ->fortune_teller_emporium_knot
+    *[Fortune teller emporium] ->fortune_teller_emporium_knot
 }
 {loc ? Prosthetist:
     +[Prosthetist] -> prosthetist
 }
 {loc ? Posthetics_clinic: 
-    +[Posthetics clinic] ->prosthetics_clinic
+    *[Posthetics clinic] ->prosthetics_clinic
 }
 
 +[Rest for the Night] ->up_state->
@@ -93,7 +93,7 @@ Day{chapter}
 ~chapter++
 {chapter == 2:
     ~loc -= city_hall
-    ~loc -= dental_clinic
+    ~loc -= Dental_clinic
     ~loc -= fortune_teller_emporium
     ~loc -= Posthetics_clinic
     ->day2_prolog->
